@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Cada cop que s'actualitzen els certificats de Let's Encrypt el Certbot executa aquest script per tal que slapd pugui accedir als certificats, i a més genera el certificat de CA.
+# isrgrootx1.pem.txt: https://letsencrypt.org/certificates/
+
+chown :ssl-cert /etc/letsencrypt/archive/xarxacatala.cat/*
+chmod 640 /etc/letsencrypt/archive/xarxacatala.cat/*
+cat /etc/letsencrypt/live/xarxacatala.cat/chain.pem /etc/ssl/certs/isrgrootx1.pem > /etc/ldap/ca.merged.crt
