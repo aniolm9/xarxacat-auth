@@ -6,4 +6,5 @@ Els diferents membres voluntaris de Xarxa Català tenen diferents rols dins el p
 
 ## Contingut
 Aquest repositori conté:
- * Web per canviar la contrasenya.
+ * Web per canviar la contrasenya (contrasenyes-usuaris).
+ * Script que "fa coses" amb els certificats (slapd-certs).
