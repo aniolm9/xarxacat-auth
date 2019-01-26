@@ -47,6 +47,30 @@ if (!$_SESSION["loggedin"]) {
                     <p><?=$_SESSION["user"]?></p>
                   </div>
                 </div>
+                <div class="row">
+                  <div class="col-md-3">
+                    <p><strong>Gitea:</strong></p>
+                  </div>
+                  <div class="col-md-9">
+                    <p><a href="https://gitea.xarxacatala.cat/" target="_blank">gitea.xarxacatala.cat</a></p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3">
+                    <p><strong>Gestió:</strong></p>
+                  </div>
+                  <div class="col-md-9">
+                    <p><a href="https://gestio.xarxacatala.cat/" target="_blank">gestio.xarxacatala.cat</a></p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3">
+                    <p><strong>Uploader:</strong></p>
+                  </div>
+                  <div class="col-md-9">
+                    <p><a href="https://uploader.multimedia.xarxacatala.cat/" target="_blank">uploader.multimedia.xarxacatala.cat</a></p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
