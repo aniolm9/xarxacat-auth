@@ -11,7 +11,7 @@ function login($user, $password) {
 
     // bind
     $ldap = connect();
-    $ldap_user = "uid=".$user.",ou=humans,dc=xarxacatala,dc=cat";
+    $ldap_user = "uid=".$user.",ou=actius,dc=xarxacatala,dc=cat";
     $bind = ldap_bind($ldap, $ldap_user, $password);
 
     // login and close connection

@@ -16,7 +16,7 @@ function password($old_pass, $new_pass, $new_pass_repeat) {
         exit();
     }
 
-    $user = "uid=".$_SESSION["user"].",ou=humans,dc=xarxacatala,dc=cat";
+    $user = "uid=".$_SESSION["user"].",ou=actius,dc=xarxacatala,dc=cat";
     $ldap = connect();
 
     $bind = ldap_bind($ldap, $user, $old_pass);
