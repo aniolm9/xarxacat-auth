@@ -11,8 +11,8 @@ if (!$_SESSION["loggedin"]) {
 function password($old_pass, $new_pass, $new_pass_repeat) {
     // check if passwords are provided
     if (empty($old_pass) || empty($new_pass) || empty($new_pass_repeat)) {
-	$_SESSION["error"] = "No has omplert tots els camps.";
-	header('Location: error');
+        $_SESSION["error"] = "No has omplert tots els camps.";
+        header('Location: error');
         exit();
     }
 
@@ -26,8 +26,8 @@ function password($old_pass, $new_pass, $new_pass_repeat) {
             $info = array("userPassword" => '{crypt}'.crypt($new_pass, '$6$rounds=5000$posaunafraseabsurda$'));
 
             if ($modify = ldap_modify($ldap, $user, $info)) {
-		$_SESSION["success"] = "La teva contrasenya s'ha canviat correctament.";
-		header('Location: success');
+                $_SESSION["success"] = "La teva contrasenya s'ha canviat correctament.";
+                header('Location: success');
             }
         }
         else {
@@ -41,15 +41,15 @@ function password($old_pass, $new_pass, $new_pass_repeat) {
 
     ldap_close($ldap);
     if (!empty($_SESSION["error"])){
-      header('Location: error');
+        header('Location: error');
     }
 }
 
 // check if the form has run
 if (isset($_POST["new_pass"])) {
-    $old_pass = htmlspecialchars($_POST["old_pass"]);
-    $new_pass = htmlspecialchars($_POST["new_pass"]);
-    $new_pass_repeat = htmlspecialchars($_POST["new_pass_repeat"]);
+    $old_pass = html_entity_decode(htmlspecialchars($_POST["old_pass"]));
+    $new_pass = html_entity_decode(htmlspecialchars($_POST["new_pass"]));
+    $new_pass_repeat = html_entity_decode(htmlspecialchars($_POST["new_pass_repeat"]));
     password($old_pass, $new_pass, $new_pass_repeat);
 }
 
