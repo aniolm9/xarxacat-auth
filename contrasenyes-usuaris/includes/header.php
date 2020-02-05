@@ -3,7 +3,7 @@
   <nav id="nav">
       <ul>
           <?php
-          if ($_SESSION["loggedin"]) {
+          if (isset($_SESSION["loggedin"])) {
             ?>
             <li><a href="logout" title="Log Out" class="btn-logout"><i class="fa fa-sign-out " aria-hidden="true"></i></a></li>
             <?php
